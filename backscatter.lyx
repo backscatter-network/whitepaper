@@ -100,7 +100,7 @@ https://backscatter.network/
 \end_layout
 
 \begin_layout Date
-November 9th, 2023
+November 10th, 2023
 \end_layout
 
 \begin_layout Abstract
@@ -278,9 +278,7 @@ The party requesting to read data reliably broadcasts the request along
  using their share, and finally reliably broadcasts the partially decrypted
  + re-encrypted data along with a zero-knowledge proof showing the message
  is valid.
- Once enough parties have reliably broadcast their partially decrypted share,
- these pieces can be assembled into a single ciphertext containing the data
- encrypted under the receiving public key.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -320,6 +318,12 @@ Data, encrypted for the network key, homomorphically re-encrypted for the
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Once enough parties have reliably broadcast their partially decrypted share,
+ these pieces can be assembled into a single ciphertext containing the data
+ encrypted under the receiving public key.
 \end_layout
 
 \begin_layout Standard
@@ -747,7 +751,15 @@ The parties aggregate received shares to generate their final share of the
 The first challenge is verifiability, as in step 2 a party could send ‘fake’
  shares, potentially disabling the network.
  There are a few different methods in scientific literature that solve this
- issue, but most require a threshold lower than ⅓ the committee size.
+ issue
+\begin_inset CommandInset citation
+LatexCommand cite
+key "key-3,key-4,key-5"
+literal "false"
+
+\end_inset
+
+, but most require a threshold lower than ⅓ the committee size.
  Consider that in our system the public keys of all parties are known by
  all other parties.
  We utilize this property to propose a distributed key generation algorithm
